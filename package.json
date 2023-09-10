@@ -2,7 +2,7 @@
   "name": "@qlick/fireapi",
   "version": "1.0.0",
   "description": "A wrapper for the 24Fire API",
-  "website": "https://qlick.dev/",
+  "homepage": "https://qlick.dev/",
   "publisher": "qlick",
   "author": "nelmin",
   "maintainers": [
