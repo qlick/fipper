@@ -14,8 +14,7 @@
     "api",
     "wrapper",
     "24fireapi",
-    "fireapi",
-    "firewrapper"
+    "fireapi"
   ],
   "repository": {
     "type": "git",
