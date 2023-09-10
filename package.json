@@ -1,7 +1,14 @@
 {
-  "name": "fipper",
+  "name": "@qlick/fireapi",
   "version": "1.0.0",
   "description": "A wrapper for the 24Fire API",
+  "website": "https://qlick.dev/",
+  "publisher": "qlick",
+  "author": "nelmin",
+  "maintainers": [
+    "nelmin"
+  ],
+  "license": "Apache-2.0",
   "keywords": [
     "24fire",
     "api",
@@ -12,13 +19,17 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/qlick/fipper.git"
+    "url": "https://github.com/qlick/fireapi.git"
   },
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "pub": "tsc && npm publish"
   },
   "dependencies": {
     "wretch": "^2.6.0"
