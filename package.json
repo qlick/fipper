@@ -1,0 +1,29 @@
+{
+  "name": "fipper",
+  "version": "1.0.0",
+  "description": "A wrapper for the 24Fire API",
+  "keywords": [
+    "24fire",
+    "api",
+    "wrapper",
+    "24fireapi",
+    "fireapi",
+    "firewrapper"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qlick/firewrapper.git"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "wretch": "^2.6.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
