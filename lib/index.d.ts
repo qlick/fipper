@@ -11,9 +11,9 @@ export default class FireAPI {
      */
     constructor(apiKey: string);
     additional(): {
-        os_list: () => Promise<string[]>;
-        hostname_list: () => Promise<string[]>;
-        iso_list: () => Promise<string[]>;
+        os_list: () => string[];
+        hostname_list: () => string[];
+        iso_list: () => string[];
     };
     /**
      * @returns All available list endpoints
