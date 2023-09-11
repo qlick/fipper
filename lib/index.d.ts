@@ -1,4 +1,4 @@
-export default class FireWrapper {
+export default class FireAPI {
     private readonly apiKey;
     constructor(apiKey: string);
     list(): {
