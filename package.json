@@ -1,6 +1,6 @@
 {
   "name": "@qlick/fireapi",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A wrapper for the 24Fire API",
   "homepage": "https://qlick.dev/",
   "publisher": "qlick",
