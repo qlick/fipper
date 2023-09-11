@@ -16,19 +16,19 @@ export default class FireAPI {
     this.apiKey = apiKey;
   }
 
-  public additional() {
+  public additional_lists() {
     /**
      * @returns All available operating systems
      */
     function os_list() {
-      return ["debian_11", "debian_12", "ubuntu_22_10", "ubuntu_22_04", "centos_7", "windows_server_2019"];
+      return ["debian_11", "debian_12", "ubuntu_22_10", "ubuntu_22_04", "centos_7", "windows_server_2019"] as const;
     }
 
     /**
      * @returns All available hosts
      */
     function hostname_list() {
-      return ["nl_ryzen", "nl_xeon"];
+      return ["nl_ryzen", "nl_xeon"] as const;
     }
 
     /**
@@ -45,7 +45,7 @@ export default class FireAPI {
         "proxmox_backup_server_3",
         "rocky_linux_9",
         "system_rescue_cd",
-      ];
+      ] as const;
     }
 
     /**

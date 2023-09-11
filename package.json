@@ -1,6 +1,6 @@
 {
   "name": "@qlick/fireapi",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A wrapper for the 24Fire API",
   "homepage": "https://qlick.dev/",
   "publisher": "qlick",
@@ -14,7 +14,9 @@
     "api",
     "wrapper",
     "24fireapi",
-    "fireapi"
+    "fireapi",
+    "qlick",
+    "qlick.dev"
   ],
   "repository": {
     "type": "git",

@@ -10,10 +10,10 @@ export default class FireAPI {
      * @param apiKey The API key used for the requests
      */
     constructor(apiKey: string);
-    additional(): {
-        os_list: () => string[];
-        hostname_list: () => string[];
-        iso_list: () => string[];
+    additional_lists(): {
+        os_list: () => readonly ["debian_11", "debian_12", "ubuntu_22_10", "ubuntu_22_04", "centos_7", "windows_server_2019"];
+        hostname_list: () => readonly ["nl_ryzen", "nl_xeon"];
+        iso_list: () => readonly ["3cx_debian_10.", "arch_linux_23_08", "centos_7", "centos_9", "fedora_38", "proxmox_8", "proxmox_backup_server_3", "rocky_linux_9", "system_rescue_cd"];
     };
     /**
      * @returns All available list endpoints
