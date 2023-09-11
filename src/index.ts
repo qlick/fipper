@@ -1,6 +1,6 @@
 import wretch from "wretch";
 
-export default class FireWrapper {
+export default class FireAPI {
   private readonly apiKey: string;
 
   constructor(apiKey: string) {
