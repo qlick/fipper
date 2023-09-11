@@ -16,6 +16,48 @@ export default class FireAPI {
     this.apiKey = apiKey;
   }
 
+  public additional() {
+    /**
+     * @returns All available operating systems
+     */
+    async function os_list() {
+      return ["debian_11", "debian_12", "ubuntu_22_10", "ubuntu_22_04", "centos_7", "windows_server_2019"];
+    }
+
+    /**
+     * @returns All available hosts
+     */
+    async function hostname_list() {
+      return ["nl_ryzen", "nl_xeon"];
+    }
+
+    /**
+     * @returns All available ISOs
+     */
+    async function iso_list() {
+      return [
+        "3cx_debian_10.",
+        "arch_linux_23_08",
+        "centos_7",
+        "centos_9",
+        "fedora_38",
+        "proxmox_8",
+        "proxmox_backup_server_3",
+        "rocky_linux_9",
+        "system_rescue_cd",
+      ];
+    }
+
+    /**
+     * @returns All functions from above
+     */
+    return {
+      os_list,
+      hostname_list,
+      iso_list,
+    };
+  }
+
   /**
    * @returns All available list endpoints
    */
@@ -82,7 +124,7 @@ export default class FireAPI {
   }
 
   /**
-   * 
+   *
    * @param vmid The ID of the VM
    * @returns All available endpoints for DDoS protection
    */
@@ -230,7 +272,18 @@ export default class FireAPI {
      * @param iso The ISO to attach
      * @returns The JSON Response
      */
-    async function attach(iso: "3cx_debian_10." | "arch_linux_23_08" | "centos_7" | "centos_9" | "fedora_38" | "proxmox_8" | "proxmox_backup_server_3" | "rocky_linux_9" | "system_rescue_cd") {
+    async function attach(
+      iso:
+        | "3cx_debian_10."
+        | "arch_linux_23_08"
+        | "centos_7"
+        | "centos_9"
+        | "fedora_38"
+        | "proxmox_8"
+        | "proxmox_backup_server_3"
+        | "rocky_linux_9"
+        | "system_rescue_cd",
+    ) {
       return await wretch(`https://live.fireapi.de/vm/${vmid}/iso/`)
         .headers({AUTHORIZATION: apiKey})
         .body({
@@ -264,7 +317,7 @@ export default class FireAPI {
 
     /**
      * @param vmid The ID of the VM
-     * @param os? The OS to reinstall
+     * @param os The OS to reinstall
      * @returns The JSON Response
      */
     async function reinstall(vmid: string, os?: "debian_11" | "debian_12" | "ubuntu_22_10" | "ubuntu_22_04" | "centos_7" | "windows_server_2019") {
@@ -283,12 +336,21 @@ export default class FireAPI {
      * @param disk The amount of disk space
      * @param os The OS to install
      * @param hostsystem The host system
-     * @param ips? The amount of IPs
-     * @param backup_slots? The amount of backup slots
-     * @param network_speed? The network speed
+     * @param ips The amount of IPs
+     * @param backup_slots The amount of backup slots
+     * @param network_speed The network speed
      * @returns The created VM
      */
-    async function create(cores: number, mem: number, disk: number, os: "debian_11" | "debian_12" | "ubuntu_22_10" | "ubuntu_22_04" | "centos_7" | "windows_server_2019", hostsystem: "nl_xeon" | "nl_ryzen", ips?: number, backup_slots?: number, network_speed?: number) {
+    async function create(
+      cores: number,
+      mem: number,
+      disk: number,
+      os: "debian_11" | "debian_12" | "ubuntu_22_10" | "ubuntu_22_04" | "centos_7" | "windows_server_2019",
+      hostsystem: "nl_xeon" | "nl_ryzen",
+      ips?: number,
+      backup_slots?: number,
+      network_speed?: number,
+    ) {
       return await wretch(`https://live.fireapi.de/vm/create`)
         .body({
           cores,
@@ -317,11 +379,11 @@ export default class FireAPI {
       }
 
       /**
-       * @param cores? The amount of cores
-       * @param mem? The amount of memory
-       * @param disk? The amount of disk space
-       * @param backup_slots? The amount of backup slots
-       * @param network_speed? The network speed
+       * @param cores The amount of cores
+       * @param mem The amount of memory
+       * @param disk The amount of disk space
+       * @param backup_slots The amount of backup slots
+       * @param network_speed The network speed
        * @returns The edited VM config
        */
       async function edit(cores?: number, mem?: number, disk?: number, backup_slots?: number, network_speed?: number) {
@@ -378,7 +440,7 @@ export default class FireAPI {
     async function noVNC(vmid: string) {
       return await wretch(`https://live.fireapi.de/vm/${vmid}/novnc`).headers({AUTHORIZATION: apiKey}).post().json();
     }
-    
+
     /**
      * @param vmid The ID of the VM
      * @returns The JSON Response
