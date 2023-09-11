@@ -10,6 +10,11 @@ export default class FireAPI {
      * @param apiKey The API key used for the requests
      */
     constructor(apiKey: string);
+    additional(): {
+        os_list: () => Promise<string[]>;
+        hostname_list: () => Promise<string[]>;
+        iso_list: () => Promise<string[]>;
+    };
     /**
      * @returns All available list endpoints
      */
